@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- daisy UI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="container mx-auto">
+    <header>
+      <!-- html design and css for navbar -->
+      <nav class="py-10 md:flex text-center justify-between items-center">
+        <h1 class="md:text-4xl text-3xl mb-5 md:mb-0 font-extrabold">ReTro</h1>
+        <div class="flex gap-4 justify-center">
+          <button class="btn rounded-full border border-blue-200">
+            <i class="fa-solid fa-house"></i>
+          </button>
+
+          <button class="btn rounded-full border border-blue-200">
+            <i class="fa-solid fa-pen"></i>
+          </button>
+
+          <button class="btn rounded-full border border-blue-200">
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <button class="btn rounded-full border border-blue-200">
+            <i class="fa-solid fa-flag"></i>
+          </button>
+          <button class="btn bg-blue-600 text-white rounded-full text-lg">
+            Sign In
+          </button>
+        </div>
+      </nav>
+
+      <!-- html design css for hero section -->
+
+      <section
+        class="hero-section bg-blue-950 md:py-32 md:px-24 p-6 text-white rounded-3xl md:flex justify-between">
+        <div class="hero-left flex flex-col gap-5">
+          <h1 class="md:text-7xl text-3xl font-extrabold">
+            Welcome to the <br />
+            <span class="text-blue-600">ReTro</span> Forum
+          </h1>
+          <p class="md:text-2xl">
+            Hello and Welcome to RETRO, Your Virtual Haven <br />for Ideas and
+            Creativity
+          </p>
+          <div class="p-2 rounded-full flex justify-between bg-white">
+            <input
+              class="py-2 md:pr-20 bg-transparent text-black"
+              type="text"
+              placeholder=" Search here anything.." />
+            <button
+              class="btn-primary bg-blue-600 text-white px-6 py-4 rounded-full">
+              Search
+            </button>
+          </div>
+        </div>
+        <div
+          class="hero-right bg-white md:p-10 p-5 w-80 mx-auto text-gray-500 md:text-2xl mt-6 flex flex-col gap-5 justify-center rounded-xl">
+          <div class="flex justify-between items-center">
+            <h1>Registered Users</h1>
+            <p>01</p>
+          </div>
+          <div class="flex justify-between items-center">
+            <h1>Forum</h1>
+            <p>05</p>
+          </div>
+          <div class="flex justify-between items-center">
+            <h1>Topics</h1>
+            <p>03</p>
+          </div>
+          <div class="flex justify-between items-center">
+            <h1>Replies</h1>
+            <p>01</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <!-- html css code for discuss section -->
+      <section class="discuss-section">
+        <h1 class="text-4xl font-extrabold text-center md:mt-24 mt-10">
+          Let's Discuss
+        </h1>
+        <p class="text-center py-10">
+          Let your voice be heard in our Discuss Section! It's more than
+          comments; <br />
+          it's a space for meaningful conversations. Connect, share, and grow
+          together with Retro.
+        </p>
+
+        <div class="md:flex gap-5">
+          <div
+            class="discuss-left md:w-[63%] bg-blue-50 border border-blue-400 rounded-xl mb-10">
+            <div class="flex gap-5 text-lg text-gray-600 md:p-10 p-5">
+              <div class="relative">
+                <i
+                  class="fa-solid fa-circle absolute text-green-600 z-10 right-[-6px] bottom-[-20]"></i>
+                <img
+                  class="md:w-24 md:h-24 w-44 h-10 md:rounded-xl rounded-full border border-r-red-400"
+                  src="https://i.pinimg.com/736x/f8/66/8e/f8668e5328cfb4938903406948383cf6.jpg"
+                  alt="" />
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="flex gap-6 items-center">
+                  <h1>#Music</h1>
+                  <h1>Author : Awlad Hossain</h1>
+                </div>
+                <h1 class=" md:text-2xl font-bold">
+                  10 Kids Unaware of Their Halloween Costume
+                </h1>
+                <p class="text-sm">
+                  It’s one thing to subject yourself to ha Halloween costume
+                  mishap because,<br />
+                  hey that’s your prerogative
+                </p>
+                <hr class="border-dashed" />
+                <div class="flex justify-between items-center">
+                  <div class="flex gap-5">
+                    <div class="flex gap-4 items-center">
+                      <i class="fa-solid fa-envelope-open-text"></i>
+                      <p>560</p>
+                    </div>
+
+                    <div class="flex gap-4 items-center">
+                      <i class="fa-solid fa-eye"></i>
+                      <p>1,568</p>
+                    </div>
+
+                    <div class="flex gap-4 items-center">
+                      <i class="fa-regular fa-clock"></i>
+                      <p>5 min</p>
+                    </div>
+                  </div>
+                  <button
+                    class="p-2 px-3 rounded-full bg-green-500 text-white text-xl">
+                    <i class="fa-solid fa-envelope-open"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="discuss right md:w-[37%] bg-gray-100 rounded-xl p-10">
+            <div class="flex items-center justify-between">
+              <h1 class="text-2xl font-semibold">Title</h1>
+              <div class="flex gap-2 items-center text-lg">
+                <i class="fa-regular fa-circle-check text-green-500"></i>
+                <p>Mark as read <span>(4)</span></p>
+              </div>
+            </div>
+            <hr class="my-3" />
+
+            <div
+              class="flex justify-between items-center bg-white p-6 rounded-xl">
+              <h1 class="text-lg">
+                10 kids Unaware of their halloween costume
+              </h1>
+              <div class="flex gap-3 items-center">
+                <i class="fa-regular fa-eye"></i>
+                <p>1,568</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
