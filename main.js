@@ -24,7 +24,7 @@ const mainCard = async () => {
           src="${card.image}"
           alt="" />
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 w-full">
         <div class="flex gap-6 items-center">
           <h1>#${card.category}</h1>
           <h1>Author : ${card.author.name}</h1>
@@ -35,7 +35,7 @@ const mainCard = async () => {
         <p class="text-sm">
           ${card.description}
         </p>
-        <hr class="border-dashed" />
+        <hr class="border-dashed"/>
         <div class="flex justify-between items-center">
           <div class="flex gap-5">
             <div class="flex gap-4 items-center">
@@ -93,5 +93,11 @@ const handleRead = (title, view) => {
 
   Readsection.appendChild(newReaddiv);
 };
+
+
+// latest post section
+
+
+
 
 mainCard();

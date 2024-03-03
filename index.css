@@ -4,3 +4,7 @@
     background-position: bottom;
     background-size: contain;
 }
+
+.input-field{
+    outline: none;
+}
