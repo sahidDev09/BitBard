@@ -46,7 +46,7 @@ const mainCard = async () => {
 
             <div class="flex gap-4 items-center">
               <i class="fa-regular fa-clock"></i>
-              <p>${card.posted_time}</p>
+              <p>${card.posted_time}min</p>
             </div>
           </div>
           <button
