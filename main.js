@@ -1,4 +1,8 @@
 const discussLeft = document.getElementById("mainCardParent");
+const Readsection = document.getElementById("total-section");
+const countRead = document.getElementById("countRead");
+
+let count = 0;
 
 const mainCard = async () => {
   const response = await fetch(
@@ -50,7 +54,7 @@ const mainCard = async () => {
             </div>
           </div>
           <button
-          onclick = "handleRead(${card.id})"
+          onclick = "handleRead('${card.title}', '${card.view_count}')"
             class="addToRead p-2 px-3 rounded-full bg-green-500 text-white text-xl">
             <i class="fa-solid fa-envelope-open"></i>
           </button>
@@ -68,14 +72,26 @@ const mainCard = async () => {
 
 // mark as read function
 
-const handleRead = async (id) => {
-  console.log(id);
-  //load single read card data
-  const res = await fetch(
-    `https://openapi.programming-hero.com/api/retro-forum/posts${id}`
-  );
-  const data = await res.json();
-  console.log(data);
+const handleRead = (title, view) => {
+  count++;
+  countRead.innerText = count;
+
+  const newReaddiv = document.createElement("div");
+  newReaddiv.innerHTML = `
+  
+              <div
+              class="flex justify-between items-center bg-white p-6 rounded-xl mb-5">
+               <h1 class="text-lg">
+                  ${title}
+                </h1>
+                <div class="flex gap-3 items-center">
+                  <i class="fa-regular fa-eye"></i>
+                  <p>${view}</p>
+                </div>
+              </div>
+  `;
+
+  Readsection.appendChild(newReaddiv);
 };
 
 mainCard();
