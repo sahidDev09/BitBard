@@ -8,3 +8,13 @@
 .input-field{
     outline: none;
 }
+
+.toolText{
+
+    visibility: hidden;
+    transition: all 0.1s ease-in;
+}
+
+.toolDiv:hover .toolText{
+    visibility: visible;
+}

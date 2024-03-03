@@ -12,17 +12,29 @@ const mainCard = async () => {
   const data = await response.json();
   data.posts.forEach((card) => {
     const mainDiscussDiv = document.createElement("div");
+
+    // active indicators
+
+    let indicatorColor;
+    if (card.author.isActive == true) {
+      indicatorColor = "bg-green-600";
+    } else {
+      indicatorColor = "bg-red-600";
+    }
+
     mainDiscussDiv.innerHTML = `
     <div
     class="discuss-left  gap-2 bg-blue-50 border border-blue-400 rounded-xl mb-5">
-    <div class="flex gap-5 text-lg text-gray-600 md:p-10 p-5">
+    <div class="md:flex gap-5 text-lg text-gray-600 md:p-10 p-5">
       <div class="relative">
-        <i
-          class="fa-solid fa-circle absolute text-green-600 z-10 right-[-6px] bottom-[-20]"></i>
-        <img
-          class="md:w-24 md:h-24 w-44 h-10 md:rounded-xl rounded-full border border-r-red-400"
+      <div class="indicator">
+      <span id="indicators" class="indicator-item badge ${indicatorColor}"></span>
+      <img
+          class="md:w-24 md:h-24 w-12 h-10 md:rounded-xl rounded-full border border-r-red-400"
           src="${card.image}"
           alt="" />
+    </div>
+        
       </div>
       <div class="flex flex-col gap-4 w-full">
         <div class="flex gap-6 items-center">
@@ -115,7 +127,11 @@ const latesPost = async () => {
               alt="" />
             <div class="flex gap-3 items-center">
               <i class="fa-solid fa-calendar-days text-lg"></i>
-              <p>${box.author.posted_date}</p>
+              <p>${
+                box.author.posted_date
+                  ? box.author.posted_date
+                  : "No Publish date"
+              }</p>
             </div>
             <h1 class="text-lg font-bold">
               ${box.title}
@@ -130,7 +146,9 @@ const latesPost = async () => {
                 alt="" />
               <div>
                 <h1 class="font-bold">${box.author.name}</h1>
-                <h1>${box.author.designation}</h1>
+                <h1>${
+                  box.author.designation ? box.author.designation : "Unknown"
+                }</h1>
               </div>
             </div>
           </div>

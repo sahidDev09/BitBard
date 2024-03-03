@@ -18,28 +18,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body >
+  <body>
     <header class="container mx-auto">
       <!-- html design and css for navbar -->
-      <nav class="py-10 md:flex text-center justify-between items-center">
-        <h1 class="md:text-4xl text-3xl mb-5 md:mb-0 font-extrabold">ReTro</h1>
+      <nav class="py-5 md:flex text-center justify-between items-center mb-10">
+        <h1 class="md:text-4xl text-3xl mb-5 md:mb-0 font-extrabold mt-10">ReTro</h1>
         <div class="flex gap-4 justify-center">
-          <button class="btn rounded-full border border-blue-200">
-            <i class="fa-solid fa-house"></i>
-          </button>
+          <div class="toolDiv flex flex-col gap-2">
+            <h1 class="toolText">Home</h1>
+            <button class="btn rounded-full border border-blue-200">
+              <i class="fa-solid fa-house"></i>
+            </button>
+          </div>
 
-          <button class="btn rounded-full border border-blue-200">
-            <i class="fa-solid fa-pen"></i>
-          </button>
+          <div class="toolDiv flex flex-col gap-2">
+            <h1 class="toolText">Write</h1>
+            <button class="btn rounded-full border border-blue-200">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+          </div>
 
-          <button class="btn rounded-full border border-blue-200">
-            <i class="fa-solid fa-user-plus"></i>
-          </button>
+          <div class="toolDiv flex flex-col gap-2">
+            <h1 class="toolText">Add</h1>
+            <button class="btn rounded-full border border-blue-200">
+              <i class="fa-solid fa-user-plus"></i>
+            </button>
+          </div>
 
-          <button class="btn rounded-full border border-blue-200">
-            <i class="fa-solid fa-flag"></i>
-          </button>
-          <button class="btn bg-blue-600 text-white rounded-full text-lg">
+          <div class="toolDiv flex flex-col gap-2">
+            <h1 class="toolText">Flags</h1>
+            <button class="btn rounded-full border border-blue-200">
+              <i class="fa-solid fa-flag"></i>
+            </button>
+          </div>
+          <button class="btn bg-blue-600 text-white rounded-full text-lg mt-8">
             Sign In
           </button>
         </div>
@@ -163,7 +175,6 @@
     <footer class="mt-10">
       <footer
         class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-
         <h1 class="text-4xl font-bold">ReTro</h1>
 
         <nav class="grid grid-flow-col gap-4">
