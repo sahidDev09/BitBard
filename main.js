@@ -1,6 +1,7 @@
 const discussLeft = document.getElementById("mainCardParent");
 const Readsection = document.getElementById("total-section");
 const countRead = document.getElementById("countRead");
+const cardContainer = document.getElementById("card-container");
 
 let count = 0;
 
@@ -10,7 +11,6 @@ const mainCard = async () => {
   );
   const data = await response.json();
   data.posts.forEach((card) => {
-    console.log(card);
     const mainDiscussDiv = document.createElement("div");
     mainDiscussDiv.innerHTML = `
     <div
@@ -94,10 +94,54 @@ const handleRead = (title, view) => {
   Readsection.appendChild(newReaddiv);
 };
 
-
 // latest post section
 
+const latesPost = async () => {
+  const url =
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts";
 
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((box) => {
+        const newCarddiv = document.createElement("div");
+        newCarddiv.innerHTML = `
+        
+        <div
+            class="card-latest border-gray-300 border-2 flex flex-col gap-3 p-5 rounded-xl md:h-[550px] xl:h-[550px] mb-5">
+            <img
+              class="rounded-xl"
+              src="${box.cover_image}"
+              alt="" />
+            <div class="flex gap-3 items-center">
+              <i class="fa-solid fa-calendar-days text-lg"></i>
+              <p>${box.author.posted_date}</p>
+            </div>
+            <h1 class="text-lg font-bold">
+              ${box.title}
+            </h1>
+            <p>
+              ${box.description}
+            </p>
+            <div class="flex items-center gap-4">
+              <img
+                class="w-[50px] h-[50px] rounded-full"
+                src="${box.profile_image}"
+                alt="" />
+              <div>
+                <h1 class="font-bold">${box.author.name}</h1>
+                <h1>${box.author.designation}</h1>
+              </div>
+            </div>
+          </div>
+        
+        `;
 
+        cardContainer.appendChild(newCarddiv);
+      });
+    });
+};
+
+latesPost();
 
 mainCard();
