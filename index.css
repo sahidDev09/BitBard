@@ -1,20 +1,19 @@
-.hero-section{
-    background-image: url("./images/bgbanner.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
+.hero-section {
+  background-image: url("./images/bgbanner.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
-.input-field{
-    outline: none;
+.input-field {
+  outline: none;
 }
 
-.toolText{
-
-    visibility: hidden;
-    transition: all 0.1s ease-in;
+.toolText {
+  visibility: hidden;
+  transition: all 0.1s ease-in;
 }
 
-.toolDiv:hover .toolText{
-    visibility: visible;
+.toolDiv:hover .toolText {
+  visibility: visible;
 }

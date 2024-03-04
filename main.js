@@ -54,9 +54,9 @@ const mainCard = async (inputText = "") => {
           ${card.description}
         </p>
         <hr class="border-dashed"/>
-        <div class="flex justify-between items-center">
-          <div class="flex gap-5">
-            <div class="flex gap-4 items-center">
+        <div class="flex justify-between items-center ">
+          <div class="flex md:gap-5 gap-2">
+            <div class="flex md:gap-4 gap-2 items-center">
               <i class="fa-solid fa-envelope-open-text"></i>
               <p>${card.comment_count}</p>
             </div>
@@ -72,7 +72,9 @@ const mainCard = async (inputText = "") => {
             </div>
           </div>
           <button
-          onclick = "handleRead('${card.title}', '${card.view_count}')"
+          onclick = "handleRead('${card.title.replace("'", "")}', '${
+      card.view_count
+    }')"
             class="addToRead p-2 px-3 rounded-full bg-green-500 text-white text-xl">
             <i class="fa-solid fa-envelope-open"></i>
           </button>
