@@ -5,11 +5,14 @@ const cardContainer = document.getElementById("card-container");
 
 let count = 0;
 
-const mainCard = async () => {
+// main card
+
+const mainCard = async (inputText) => {
   const response = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
+    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`
   );
   const data = await response.json();
+  discussLeft.textContent = "";
   data.posts.forEach((card) => {
     const mainDiscussDiv = document.createElement("div");
 
@@ -158,6 +161,12 @@ const latesPost = async () => {
         cardContainer.appendChild(newCarddiv);
       });
     });
+};
+
+const handleSearch = () => {
+  const inputField = document.getElementById("searchBox");
+  const inputText = inputField.value;
+  mainCard(inputText);
 };
 
 latesPost();
