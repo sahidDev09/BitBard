@@ -108,6 +108,8 @@
     </header>
 
     <main class="container mx-auto">
+      <!-- loading animaiton -->
+
       <!-- html css code for discuss section -->
       <section class="discuss-section">
         <h1 class="text-4xl font-extrabold text-center md:mt-24 mt-10">
@@ -121,9 +123,17 @@
         </p>
 
         <div class="md:flex gap-5">
-          <div
-            id="mainCardParent"
-            class="discuss-left md:w-[63%] rounded-xl mb-10"></div>
+          <div class="md:w-[63%]">
+            <div
+              id="loading-spinner"
+              class="load-anim flex justify-center items-center my-10 scale-[2] hidden">
+              <span
+                class="loading loading-infinity loading-lg bg-blue-600"></span>
+            </div>
+            <div
+              id="mainCardParent"
+              class="discuss-left rounded-xl mb-10"></div>
+          </div>
 
           <div
             class="discuss right md:w-[37%] bg-gray-100 rounded-xl p-10 overflow-hidden">

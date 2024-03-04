@@ -7,7 +7,7 @@ let count = 0;
 
 // main card
 
-const mainCard = async (inputText) => {
+const mainCard = async (inputText = "") => {
   const response = await fetch(
     `https://openapi.programming-hero.com/api/retro-forum/posts?category=${inputText}`
   );
@@ -18,11 +18,14 @@ const mainCard = async (inputText) => {
 
     // active indicators
 
-    let indicatorColor;
-    if (card.author.isActive == true) {
-      indicatorColor = "bg-green-600";
+    let activeBadge = "";
+
+    // check user is online or offline
+
+    if (card.isActive) {
+      activeBadge = `<span id="indicators" class="indicator-item badge bg-green-600"></span>`;
     } else {
-      indicatorColor = "bg-red-600";
+      activeBadge = `<span id="indicators" class="indicator-item badge bg-red-600"></span>`;
     }
 
     mainDiscussDiv.innerHTML = `
@@ -31,7 +34,7 @@ const mainCard = async (inputText) => {
     <div class="md:flex gap-5 text-lg text-gray-600 md:p-10 p-5">
       <div class="relative">
       <div class="indicator">
-      <span id="indicators" class="indicator-item badge ${indicatorColor}"></span>
+      ${activeBadge}
       <img
           class="md:w-24 md:h-24 w-12 h-10 md:rounded-xl rounded-full border border-r-red-400"
           src="${card.image}"
@@ -81,8 +84,14 @@ const mainCard = async (inputText) => {
     
     `;
 
+    toggleLoading(true);
+
     discussLeft.appendChild(mainDiscussDiv);
   });
+
+  //hide loading
+
+  toggleLoading(false);
 };
 
 // mark as read function
@@ -163,12 +172,32 @@ const latesPost = async () => {
     });
 };
 
+// handle Search function
+
 const handleSearch = () => {
+  toggleLoading(true);
   const inputField = document.getElementById("searchBox");
   const inputText = inputField.value;
-  mainCard(inputText);
+  setTimeout(() => {
+    mainCard(inputText);
+  }, 1000);
+};
+
+//loading spinner toggle
+
+const toggleLoading = (isLoading) => {
+  const loadingSpinner = document.getElementById("loading-spinner");
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+  } else {
+    loadingSpinner.classList.add("hidden");
+  }
 };
 
 latesPost();
 
-mainCard();
+toggleLoading(true);
+
+setTimeout(() => {
+  mainCard();
+}, 2000);
